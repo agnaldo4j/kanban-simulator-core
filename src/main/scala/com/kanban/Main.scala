@@ -17,7 +17,7 @@ object MyApp extends zio.App {
 
 val myAppLogic = for {
     _ <- putStrLn("Hello! what ir your name?")
-    name <- getStrLn
+    name <- getStrLn //ZIO[ENV, ERROR, DATA]
     _ <- putStrLn(s"Hello, ${name}, welcome to ZIO!")
 } yield ()
 
