@@ -26,6 +26,7 @@ object Board {
       workers = workers
     )
   }
+
 }
 
 case class Board(

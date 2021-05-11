@@ -10,10 +10,20 @@ case class Flow(
                  audit: Audit = Audit(),
                  steps: SortedSet[FlowStep] = SortedSet.empty
                ) extends Domain
+//{
+//  def addTaskOnFlowStep(task: Task, flowStepId: String) = {
+//    var flowStep = steps.find(fs => fs.id == flowStepId)
+//    println(flowStep)
+//    flowStep match {
+//      case Some(flowStep) => flowStep.tasks + task
+//      case None => None
+//    }
+//  }
+//}
 
 object Flow {
   def simpleOne(): Flow = {
-    val flowSteps = FlowStep.sample()
+    val flowSteps = FlowStep.simple()
     new Flow(steps = flowSteps)
   }
 }
