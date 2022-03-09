@@ -26,4 +26,11 @@ object FlowStep {
     FlowStep(name = "Deploy", order = 7, requiredAbility = Some(Deployer)),
     FlowStep(name = "Done", order = 8),
   )
+
+  def simple() = SortedSet(
+    FlowStep(name = "Backlog", order = 0),
+    FlowStep(name = "Development", order = 1, requiredAbility = Some(Developer)),
+    FlowStep(name = "QA", order = 2, requiredAbility = Some(QualityAssurance)),
+    FlowStep(name = "Done", order = 3),
+  )
 }
